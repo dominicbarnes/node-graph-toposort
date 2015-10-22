@@ -1,7 +1,17 @@
 
 'use strict';
 
-module.exports = function toposort(graph) {
+// single export
+module.exports = toposort;
+
+/**
+ * Topologically sort the input graph using Kahn's algorithm.
+ *
+ * @param {Graph} graph  The input graph.js instance.
+ * @return {Array}       A topologically sorted list of vertex keys.
+ */
+function toposort(graph) {
+  // TODO: use kahn's algorithm to detect cycles instead?
   if (graph.hasCycle()) {
     throw new Error('cycle detected in graph, topological sort is impossible');
   }
@@ -23,16 +33,35 @@ module.exports = function toposort(graph) {
   }
 
   return l;
-};
+}
 
+/**
+ * Helper for retrieving a flat list of source vertices in the input graph.
+ *
+ * @param {Graph} graph  The input graph.js instance.
+ * @return {Array}       No guaranteed order.
+ */
 function sources(graph) {
   return Array.from(graph.sources()).map(source => source[0]);
 }
 
+/**
+ * Helper for cloning the input graph. (since our algorithm mutates the graph
+ * during traversal)
+ *
+ * @param {Graph} graph  The input graph.js instance.
+ * @return {Graph}       A clone of the original, without vertex/edge values.
+ */
 function clone(graph) {
   return graph.clone(empty, empty);
 }
 
+/**
+ * Helper to return null in place of any input vertex/edge during cloning, as
+ * we only care about the graph structure, not the values contained within.
+ *
+ * @return {null}
+ */
 function empty() {
   return null;
 }
