@@ -1,0 +1,19 @@
+{
+  "name": "graph-toposort",
+  "version": "0.0.0",
+  "devDependencies": {
+    "@dominicbarnes/eslint-config": "*",
+    "@dominicbarnes/eslint-config-node": "*",
+    "@dominicbarnes/eslint-config-test": "*",
+    "chai": "^3.4.0",
+    "eslint": "^1.7.3",
+    "eslint-plugin-require-path-exists": "^1.0.15",
+    "graph.js": "^1.20.1",
+    "mocha": "^2.3.3"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix",
+    "test": "mocha"
+  }
+}

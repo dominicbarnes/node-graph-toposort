@@ -1,0 +1,15 @@
+sudo: false
+language: node_js
+node_js:
+- stable
+install: npm update
+cache:
+  directories:
+  - node_modules
+deploy:
+  provider: npm
+  email: dominic@dbarnes.info
+  api_key:
+    secure: EGR1jzJrN+2mwNVtQ7y5KRrH+41k9hjrZY9ITrym4vLWDEjPPO0RagMzLa2Bd2/iToNs9af+5PjHeCTPmCF9s74z1WvQ5ZHb8InJO8SyfRc1/Yon8918Uf4LhHKMCLr6x7tnEagJA2k19qpsvKTxyHgbb3i21JtSpucjHSL7QqXcX3DyBYoat7g3+OoE/0IvZnSsrv/FSs9nBwnckI9LeN+rD89UA3pBoLG6f7MwlDFHQjCIOn1EOwgN4QsAHsrsia9rUn7Q/Y7u00N/rjUpip0OU+qbs56GWkEM5GCGzXX2AziT9aL4dWbM/3sdt9OUkpQDokkevb2eRz/2Yh1rodozFH0xd697gZH7iihE0WdkuAKN8O44VCnv8c704oqw8BA1fnAjcwegRibqzdIRBKbXjNJtsQ7CVeYM9d9kr7davUD9I8Wt+3ZvyMg1T8QFtjKh1H2+1G725EvLQ7WQuYtNBtREz7IW8g7Yp+Nf/pjxIdXE7LTVbT5wzXi4r42L3AUl1EMrZZIu7p4q9NDdGEXoqURwXcw2tf6o1XW2Zoq0brXV8tLDaabqRssC1nFdQDS+8AgwZIor2o3MT5J+F+6QNjVmGt/xkJQF5XAYCVCTbwAZcSI0XAFTaDRwxFFgi46xsFsrPzymMVwPZYFSmLo/lggWv/3hszPZotZPiNQ=
+  on:
+    tags: true
