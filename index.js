@@ -7,6 +7,7 @@ module.exports = toposort;
 /**
  * Topologically sort the input graph using Kahn's algorithm.
  *
+ * @see https://en.wikipedia.org/wiki/Topological_sorting#Kahn.27s_algorithm
  * @param {Graph} graph  The input graph.js instance.
  * @return {Array}       A topologically sorted list of vertex keys.
  */
