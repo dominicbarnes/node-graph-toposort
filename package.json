@@ -13,7 +13,7 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "lint-fix": "eslint . --fix",
+    "pretest": "npm run lint",
     "test": "mocha"
   }
 }
