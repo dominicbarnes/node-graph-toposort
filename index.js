@@ -11,11 +11,6 @@ module.exports = toposort;
  * @return {Array}       A topologically sorted list of vertex keys.
  */
 function toposort(graph) {
-  // TODO: use kahn's algorithm to detect cycles instead?
-  if (graph.hasCycle()) {
-    throw new Error('cycle detected in graph, topological sort is impossible');
-  }
-
   let g = clone(graph);
   let s = sources(g);
   let l = [];
@@ -30,6 +25,10 @@ function toposort(graph) {
         s.push(m);
       }
     }
+  }
+
+  if (g.edgeCount()) {
+    throw new Error('cycle detected in graph, topological sort is impossible');
   }
 
   return l;
