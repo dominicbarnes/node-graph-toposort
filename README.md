@@ -1,6 +1,6 @@
 # node-graph-toposort
 
-> An implementation of [Kahn's Algorithm](https://en.wikipedia.org/wiki/Topological_sorting#Kahn.27s_algorithm)
+> A modified implementation of [Kahn's Algorithm](https://en.wikipedia.org/wiki/Topological_sorting#Kahn.27s_algorithm)
 > for [topologically sorting](https://en.wikipedia.org/wiki/Topological_sorting) a
 > [graph.js](https://github.com/mhelvens/graph.js) instance.
 
@@ -32,7 +32,8 @@ var list = toposort(graph);
 ## Usage
 
 This algorithm is useful when determining what order to go in when dealing with a tree of dependencies.
-The graph must be acyclic, in other words it cannot have circular dependencies. (you must remove these yourself)
+While circular dependencies are being handled, it is still an experimental feature, so please report any
+problems you find with it.
 
 ### toposort(graph)
 
