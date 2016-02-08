@@ -22,7 +22,7 @@ describe('toposort(graph)', function () {
       [ [ 'd', 'b' ] ]
     );
 
-    assert.deepEqual(toposort(graph), ['a', 'b', 'c', 'd'])
+    assert.deepEqual(toposort(graph), [ 'a', 'b', 'c', 'd' ]);
   });
 
   it('should correctly sort a simple tree', function () {

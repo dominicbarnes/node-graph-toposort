@@ -17,7 +17,7 @@ function toposort(graph) {
   let l = [];
 
   for (let c of g.cycles()) {
-    g.removeExistingEdge(c.pop(), c.shift())
+    g.removeExistingEdge(c.pop(), c.shift());
   }
 
   while (s.length) {
