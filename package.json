@@ -1,6 +1,6 @@
 {
   "name": "graph-toposort",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "devDependencies": {
     "@dominicbarnes/eslint-config": "*",
     "@dominicbarnes/eslint-config-node": "*",
