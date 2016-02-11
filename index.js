@@ -16,10 +16,6 @@ function toposort(graph) {
   let s = sources(g);
   let l = [];
 
-  for (let c of g.cycles()) {
-    g.removeExistingEdge(c.pop(), c.shift());
-  }
-
   while (s.length) {
     let n = s.shift(); // vs pop?
     l.push(n);
@@ -30,6 +26,10 @@ function toposort(graph) {
         s.push(m);
       }
     }
+  }
+
+  if (g.edgeCount()) {
+    throw new Error('cycle detected in graph, topological sort is impossible');
   }
 
   return l;

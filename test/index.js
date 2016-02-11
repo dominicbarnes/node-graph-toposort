@@ -13,16 +13,17 @@ describe('toposort(graph)', function () {
     assert.isArray(toposort(graph));
   });
 
-  it('should handle graphs that have a cycle', function () {
-    // a -> b -> c -> d -> b* (cycle)
+  it('should throw when the graph has a cycle', function () {
+    // a -> b -> c -> b* (cycle)
     var graph = new Graph(
       [ [ 'a', 'b' ] ],
       [ [ 'b', 'c' ] ],
-      [ [ 'c', 'd' ] ],
-      [ [ 'd', 'b' ] ]
+      [ [ 'c', 'b' ] ]
     );
 
-    assert.deepEqual(toposort(graph), [ 'a', 'b', 'c', 'd' ]);
+    assert.throws(function () {
+      toposort(graph);
+    });
   });
 
   it('should correctly sort a simple tree', function () {
